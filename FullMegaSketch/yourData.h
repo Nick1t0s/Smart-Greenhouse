@@ -1,57 +1,56 @@
-#define DHTPIN = 2
-#define DHTTYPE = DHT11
-#define LIGHTPIN = A2
-#define WLPIN = A3
-#define SHPIN = A4
+#define DHTPIN 2
+#define DHTTYPE DHT11
+#define LIGHTPIN A2
+#define WLPIN A3
+#define SHPIN A4
 
-#define WPIN = 3
-#define HOTPIN = 4
-#define PUMPPIN = 5
-#define LEDPIN = 6
+#define WPIN 3
+#define HOTPIN 4
+#define PUMPPIN 5
+#define LEDPIN 6
+#define TEENPIN 13
 
-#define WNAME = "Went"
-#define HOTNAME = "Hot"
-#define PUMPNAME = "Pump"
-#define LEDNAME = "Led"
+#define ISW 7
+#define ISHOT 8
+#define ISPUMP 9
+#define ISLED 10
+#define ISBUZZ 11
 
-#define BUZZERPIN = 7
-#define ISBUZZ = 1
-#define VALUEFORBUZZ
+#define WNAME "Went"
+#define HOTNAME "Hot"
+#define PUMPNAME "Pump"
+#define LEDNAME "Led"
+#define TEENNAME "TestPin"
 
-#define LIGHTFORTIME
-#define LIGHTFORVALUE
-#define FROMTIMEFORLIGHT
-#define TOTIMEFORLIGHT
-#define VALUEFORLIGHT
+#define BUZZERPIN 11
+#define MINWL 300
 
-#define CULFORTIME
-#define CULFORTEMP
-#define CULFORHUM
+#define FROMTIMELIGHT
+#define TOTIMELIGHT
+#define MINLIGHT 300
+
 #define FROMTIMECUL
 #define TOTIMECUL
-#define MAXTEMPFORCUL
-#define MAXHUMFORCUL
+#define MAXTEMP 26
+#define MAXHUM 85
 
-#define PUMPFORVALUE
-#define VALUEFORPUMP
-#define WAITFORPUMP
+#define MINSH 300
+#define WAITFORPUMP 10
 
-#define HOTFORVALUE
-#define ONVALUEFORHOT
-#define OFFVALUEFORHOTT
+#define MINTEMP 20
 
-#define OUTDHT1PIN
-#define OUTDHT2PIN
-#define OUTDHT1TYPE
-#define OUTDHT2TYPE
+#define OUTDHT1PIN 14
+#define OUTDHT2PIN 15
+#define OUTDHT1TYPE DHT11
+#define OUTDHT2TYPE DHT11
 
-#define ESOUSE
+#define ESPUSE
 #define IPFORSITE
 
-#define NIKNAME
-#define DEVICEID
-#define DEVICEPASS
+#define NIKNAME "Nick1t0s"
+#define DEVICEID "ESP"
+#define DEVICEPASS "ESP32!"
 
 #define OLEDUSE
 
-#define BAUDS = 115200
+#define BAUDS 115200
