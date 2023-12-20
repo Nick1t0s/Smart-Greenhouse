@@ -4,17 +4,13 @@
 #define WLPIN A3
 #define SHPIN A4
 
-#define WPIN 3
-#define HOTPIN 4
-#define PUMPPIN 5
-#define LEDPIN 6
+#define WPIN 2
+#define HOTPIN 3
+#define PUMPPIN 4
+#define LEDPIN 5
 #define TEENPIN 13
 
-#define ISW 7
-#define ISHOT 8
-#define ISPUMP 9
-#define ISLED 10
-#define ISBUZZ 11
+#define ISA 6
 
 #define WNAME "Went"
 #define HOTNAME "Hot"

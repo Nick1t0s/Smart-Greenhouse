@@ -22,22 +22,20 @@ void setup() {
   pinMode(HOTPIN, OUTPUT);
   pinMode(PUMPPIN, OUTPUT);
   pinMode(LEDPIN, OUTPUT);
-  pinMode(BUZZERPIN, OUTPUT);
+  pinMode(TEENPIN, OUTPUT);
 
-  pinMode(ISW,OUTPUT);
-  pinMode(ISHOT,OUTPUT);
-  pinMode(ISPUMP,OUTPUT);
-  pinMode(ISLED,OUTPUT);
+  pinMode(ISA,OUTPUT);
 
   // pin control example (i.e. turning on/off a light, a relay, etc)
-  thing[TEENNAME] << digitalPin(TEENPIN);
-  thing[WNAME] << digitalPin(WPIN);
-  thing[HOTNAME] << digitalPin(HOTPIN);
-  thing[PUMPNAME] << digitalPin(PUMPPIN);
-  thing[LEDNAME] << digitalPin(LEDPIN);
-  thing["AUTO"] << digitalPin(12);
+  thing["TestPin"] << digitalPin(TEENPIN);
+  thing["WENT"] << digitalPin(WPIN);
+  thing["HOT"] << digitalPin(HOTPIN);
+  thing["PUMP"] << digitalPin(PUMPPIN);
+  thing["LED"] << digitalPin(LEDPIN);
+  thing["AUTO"] << digitalPin(ISA);
 
   // resource output example (i.e. reading a sensor value, a variable, etc)
+  /*
   thing["Humidity"] >> outputValue(dht.readHumidity());
   thing["Temperature"] >> outputValue(dht.readTemperature());
 
@@ -50,11 +48,12 @@ void setup() {
   thing["Light"] >> outputValue(analogRead(LIGHTPIN));
   thing["WaterLevel"] >> outputValue(analogRead(WLPIN));
   thing["SoilHumidity"] >> outputValue(analogRead(SHPIN));
-
-  thing["ISW"] >> outputValue(digitalgRead(ISW));
-  thing["ISHOT"] >> outputValue(digitalRead(ISHOT));
-  thing["ISPUMP"] >> outputValue(digitalRead(ISPUMP));
-  thing["ISLED"] >> outputValue(digitalRead(ISLED));
+*/
+  thing["Went"] >> outputValue(digitalRead(2));
+  thing["Hot"] >> outputValue(digitalRead(3));
+  thing["Pump"] >> outputValue(digitalRead(4));
+  thing["Led"] >> outputValue(digitalRead(5));
+  thing["ISA"] >> outputValue(digitalRead(ISA));
 
   
 
@@ -62,23 +61,23 @@ void setup() {
 }
 
 void loop() {
-  if (digitalRead(12)==1){
+  /*if (digitalRead(12)==1){
     //Подогрев
     if (dht.readTemperature()<MINTEMP){
       digitalWrite(ISHOT,HIGH);
-      dightalWrite(HOTPIN,HIGH);
+      digitalWrite(HOTPIN,HIGH);
     }
     else{
       digitalWrite(ISHOT,LOW);
-      dightalWrite(HOTPIN,LOW);
+      digitalWrite(HOTPIN,LOW);
     }
     // Автополив
     if (analogRead(SHPIN)>MINSH){
       digitalWrite(ISW,HIGH);
-      dightalWrite(WPIN,HIGH);
+      digitalWrite(WPIN,HIGH);
       delay(WAITFORPUMP*1000);
       digitalWrite(ISW,LOW);
-      dightalWrite(WPIN,LOW);
+      digitalWrite(WPIN,LOW);
     }
   
     //Освещение
@@ -94,7 +93,8 @@ void loop() {
     //Здесь должен быть код по времени
 
     //Вентиляция
-    if (dht.readHumidity()>MAXHUM && dht.readHumidity()>(outDht1.readHumidity()+outDht2.readHumidity())/2 || dht.readTemperature()()>MAXTEMP && dht.readTemperature()>(outDht1.readTemperature()+outDht2.readTemperature())/2 ){
+//    if (dht.readHumidity()>MAXHUM && dht.readHumidity()>outDht1.readHumidity() || dht.readTemperature()>MAXTEMP && dht.readTemperature()(outDht1.readTemperature()){
+    if (dht.readTemperature()>MAXTEMP){
       digitalWrite(ISW,HIGH);
       digitalWrite(WPIN,HIGH);
     }
@@ -105,14 +105,13 @@ void loop() {
     //Здесь должен быть код по времен
 
     if(analogRead(WLPIN)>MINWL){
-      digitalWrite(ISBUZZ,LOW)
+      digitalWrite(ISBUZZ,HIGH);
       digitalWrite(BUZZERPIN,HIGH);
     }
     else{
-      digitalWrite(ISBUZZ,LOW)
+      digitalWrite(ISBUZZ,LOW);
       digitalWrite(BUZZERPIN,LOW);
     }
-  }
-
+  }*/
   thing.handle();
 }
